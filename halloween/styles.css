@@ -1,0 +1,282 @@
+* {
+  /* this will target all elements to set a font family */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  /* with and height should take the size of the window */
+  width: 100%;
+  height: 100%;
+
+  /* body has a default margin from browser we have to unset that*/
+  margin: 0;
+}
+
+.header {
+  width: 100%;
+  height: 50px;
+  background: grey;
+
+  /* this will align all the direct children of header in the center of this element */
+  display: flex;
+  align-items: center;
+}
+
+.profile-container,
+.menu-container {
+  width: 40px;
+  height: 40px;
+
+  /* we need to set this in order for "menu-pages-container" to get set his absolute position correctly relative to this container */
+  position: relative;
+}
+
+/* we set the properties off all the children of "profile-container" and "menu-container" in order to not repeat the rules for every element */
+.profile-container *,
+.menu-container * {
+  width: 100%;
+  height: 100%;
+}
+
+.profile-container {
+  /* margin left auto will push the element to the far right of it parent in this case  "menu-container"*/
+  margin-left: auto;
+  margin-right: 5px;
+}
+
+.menu-button {
+  margin-left: 5px;
+  background: lightgrey;
+
+  /* this will make out element round */
+  border-radius: 50%;
+
+  /* this will center the child image inside this element */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-button img {
+  width: 70%;
+  height: 70%;
+}
+
+.menu-pages-container {
+  /* this is the element that holds the pages and in order to show this above the content we use position absolute,top and left. keep in mind that we must set the position relative to its parent */
+  position: absolute;
+  top: 60px;
+  left: 5px;
+  width: 300px;
+  height: 500px;
+  background: grey;
+
+  /* we have display none so that we hide this until we hover over its parent*/
+  display: none;
+
+  /* we thou we we use this with display flex we add the rule on hover */
+  align-items: center;
+}
+
+/* we add the rule display flex in "menu-pages-container" only when we hover over the parent "menu-container"   */
+.menu-container:hover .menu-pages-container {
+  display: flex;
+}
+
+.arrow {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  background: grey;
+  transform: rotate(45deg);
+}
+
+#close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.pages {
+  height: unset;
+  display: flex;
+  flex-direction: column;
+}
+
+.pages p {
+  color: white;
+  margin: 0 10px;
+  padding: 20px 5px;
+  width: unset;
+  height: unset;
+  font-size: 20px;
+  text-align: center;
+  border-bottom: 1px solid white;
+}
+
+.pages p:last-child {
+  border-bottom: none;
+}
+
+.content {
+  /* contents height is calculated so that subtracts the header height*/
+  height: calc(100% - 50px);
+  background: lightgrey;
+
+  /* you nee overflow auto so that you can scroll inside this element and not over the hole body */
+  overflow: auto;
+}
+
+.person-container {
+  display: flex;
+  height: 300px;
+  margin: 10px;
+  overflow: auto;
+  background: white;
+  align-items: center;
+  padding: 10px;
+}
+
+.short-desc {
+  /* because "short-desc is inside a flex-box container and its width is flexible we need to set a min-width so that will have a constant width */
+  min-width: 130px;
+  margin-top: 20px;
+
+  /* the container has set align-items: center but we need to put just this text align up */
+  align-self: flex-start;
+  font-weight: bold;
+}
+
+.person-container img {
+  height: 80%;
+}
+
+.content-description {
+  overflow: auto;
+  height: 100%;
+}
+
+.content-description p {
+  margin: 0;
+}
+.container{
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: inline-block;
+}
+.overlay{
+  position: absolute;
+  transition: all;
+  opacity: 0;
+  background-color:white;
+
+}
+.container:hover .overlay{
+opacity: 80%;
+}
+
+.text {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-80%);
+  font size: 20px;
+  font-weight: bold;
+    text-align: center;}
+}
+.container :hover .overlayFull{
+  width: 100%;
+}
+.overlayFull {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+}
+
+
+.secondcontainer{
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: inline-block;}
+
+  .secondoverlay{
+    position: absolute;
+    transition: all;
+    opacity: 0;
+    background-color:white;}
+
+.secondcontainer:hover .secondoverlay{
+      opacity: 80%;
+      }
+ .secondtext {
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%,-80%);
+        font size: 20px;
+        font-weight: bold;
+        text-align: center; }
+
+        .secondcontainer :hover .secondoverlayFull{
+          width: 100%;
+        }
+
+        .secondoverlayFull {
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+         }
+
+
+         .thirdcontainer{
+          position: relative;
+          width: 300px;
+          height: 300px;
+          display: inline-block;}   
+
+.thirdoverlay{
+    position: absolute;
+    transition: all;
+    opacity: 0;
+    background-color:white;}
+
+    .thirdcontainer:hover .thirdoverlay{
+      opacity: 80%;
+    }
+      .thirdtext {
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%,-80%);
+        font size: 20px;
+      font-weight: bold;
+    text-align: center;}
+      
+      
+
+        .thirdcontainer:hover .thirdoverlayFull{
+          width: 100%;
+        }
+
+        .thirdoverlayFull {
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+         }
